@@ -3,6 +3,9 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+      boxShadow: {
+        'card': '6px 6px 26px -2px rgba(0,0,0,0.51)',
+      },
       colors:{
         "base-white": "hsl(var(--base--white))",
         "base-black": "hsl(var(--base--black))",
