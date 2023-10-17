@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root{
+
+ --consoles--blue-ps: 207, 100%, 37.5%, 1;
+ --consoles--red-nintendo: 355, 100%, 45.1%, 1;
+ --consoles--green-xbox: 119, 80.9%, 26.7%, 1;
+ --colors--green: 130, 69.3%, 37.1%, 1;
+ --colors--light-green: 130, 69.4%, 46.1%, 1;
+ --colors--dark-grey: 0, 0%, 29.8%, 1;
+ --colors--grey: 0, 0%, 93.3%, 1;
+ --colors--light-grey: 0, 0%, 96.9%, 1;
+ --base--black: 0, 0%, 0%, 1;
+ --base--white: 0, 0%, 100%, 1;
+
+    }
+}
+
+@layer components {
+
+}
