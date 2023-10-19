@@ -22,6 +22,9 @@ module.exports = {
         'inter': ["'Inter', sans-serif"],
       
   },
+  spacing: {
+    '256': '42rem',
+  },
     },
   },
   plugins: [],

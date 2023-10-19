@@ -1,26 +1,132 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-    :root{
-
- --consoles--blue-ps: 207, 100%, 37.5%, 1;
- --consoles--red-nintendo: 355, 100%, 45.1%, 1;
- --consoles--green-xbox: 119, 80.9%, 26.7%, 1;
- --colors--green: 130, 69.3%, 37.1%, 1;
- --colors--light-green: 130, 69.4%, 46.1%, 1;
- --colors--dark-grey: 0, 0%, 29.8%, 1;
- --colors--grey: 0, 0%, 93.3%, 1;
- --colors--light-grey: 0, 0%, 96.9%, 1;
- --base--black: 0, 0%, 0%, 1;
- --base--white: 0, 0%, 100%, 1;
- 
-    }
+  :root {
+    --consoles--blue-ps: 207, 100%, 37.5%, 1;
+    --consoles--red-nintendo: 355, 100%, 45.1%, 1;
+    --consoles--green-xbox: 119, 80.9%, 26.7%, 1;
+    --colors--green: 130, 69.3%, 37.1%, 1;
+    --colors--light-green: 130, 69.4%, 46.1%, 1;
+    --colors--dark-grey: 0, 0%, 29.8%, 1;
+    --colors--grey: 0, 0%, 93.3%, 1;
+    --colors--light-grey: 0, 0%, 96.9%, 1;
+    --base--black: 0, 0%, 0%, 1;
+    --base--white: 0, 0%, 100%, 1;
+  }
 }
 
 @layer components {
+  .footer {
+    @apply flex flex-col gap-6 bg-clr-dark-grey py-8 font-inter xl:flex-row xl:items-center xl:justify-center;
+  }
+  .footer__first_half {
+    @apply flex flex-col gap-6 bg-clr-dark-grey py-8 font-inter xl:flex-row xl:items-center xl:justify-center;
+  }
+  .footer__first_part {
+    @apply mb-6 md:mb-0 xl:border-r-2 xl:border-base-white xl:pr-10;
+  }
+  .footer__title_part {
+    @apply flex justify-center pb-4 font-bold text-base-white xl:text-lg;
+  }
+  .footer__content_first_half {
+    @apply flex flex-wrap justify-center gap-10 text-xs text-base-white xl:text-lg;
+  }
+  .footer__content_list {
+    @apply flex flex-col gap-1;
+  }
+  .footer__second_part {
+    @apply xl:border-r-2 xl:border-base-white xl:py-14 xl:pr-10;
+  }
+  .footer__second_half {
+    @apply md:flex md:flex-row md:justify-center md:gap-20;
+  }
+  .footer__third_part {
+    @apply flex flex-col items-center justify-center gap-6 text-base-white xl:border-r-2 xl:border-base-white xl:py-10 xl:pr-10;
+  }
+  .footer__btn {
+    @apply rounded-md bg-clr-green p-2;
+  }
+  .footer__list_rs {
+    @apply flex gap-4 pb-8;
+  }
+  .footer__fourth_part {
+    @apply flex flex-col items-center justify-center gap-6;
+  }
+  .footer__list_payment {
+   @apply  flex items-center justify-center gap-8;
+  }
+  .footer__list_size {
+    @apply h-12 w-12;
+  }
+  .footer__list2_size {
+    @apply h-9 w-16;
+  }
 
+  .main{
+    @apply flex flex-col gap-5 px-5 py-7;
+  }
+  .main__title{
+    @apply p-5 text-center text-3xl font-bold;
+  }
+  .main__filter{
+    @apply flex w-fit flex-row items-center justify-center gap-1 rounded-md bg-clr-green px-2 py-1;
+  }
+  .main__filter_select {
+    @apply w-full appearance-none rounded-md bg-clr-green px-2 py-2 text-lg font-bold text-base-white;
+  }
+  .main__cat{
+    @apply flex flex-col gap-4;
+  }
+  .main__cat_title {
+    @apply text-xl font-bold;
+  }
+  .main__cat_list{
+    @apply flex flex-row gap-5 p-4;
+  }
+  .main__card{
+    @apply w-2/3 md:w-72 flex flex-col items-center justify-center gap-3 rounded-md p-6 shadow-card;
+  }
+  .main__card_title{
+    @apply text-center text-base font-bold md:text-lg;
+  }
+  .main__card_div {
+    @apply flex w-full flex-row items-center justify-between;
+  }
+.main__card_btn{
+   @apply  flex w-fit flex-row items-center justify-center gap-1 rounded-md bg-clr-green px-2 py-1 text-lg font-bold text-base-white hover:border-2 hover:border-clr-green hover:bg-base-white hover:text-clr-green;
+}
+.form__title {
+    @apply mt-24 flex items-center justify-center font-inter text-2xl font-bold md:mb-6 md:text-3xl xl:text-5xl;
+}
+.form{
+    @apply flex justify-center m-10 mt-4  ;
+}
+.form__list{
+   @apply flex flex-col items-center gap-6 p-4 font-inter md:gap-12 md:p-8;
+}
+.form__list_item{
+    @apply flex w-full flex-col gap-2;
+}
+.form__input{
+   @apply w-full rounded-lg border-2 border-clr-light-green p-0.5 placeholder:text-clr-light-green md:p-2 md:py-3 md:placeholder:text-xl;
+}
+.form__btn{
+    @apply rounded-lg bg-clr-green p-2 px-4 font-semibold text-base-white md:p-3 md:text-xl;
+}
+.form__cnx{
+@apply flex flex-col p-4 md:p-8 items-center font-inter gap-16;
+}
+.form__lostmdp{
+   @apply flex justify-end font-normal text-clr-green md:text-xl;
+}
+.form__person_info{
+ @apply flex flex-col items-center gap-16 border-2 border-base-black p-4 font-inter md:p-8;
+}
+.form__label{
+    @apply font-semibold md:text-xl;
+}
 }
