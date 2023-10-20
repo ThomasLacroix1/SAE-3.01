@@ -7,20 +7,107 @@
     <title>Document</title>
   </head>
   <body>
+    <header>
+      <nav class="bg-clr-light-green px-20 py-2.5">
+        <div
+          class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
+        >
+          <a class="flex items-center" href="#" class="flex items-center">
+            <img
+              class="h-10 md:h-12 xl:h-full"
+              src="../assets/logo.png"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="navbtn"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-base-white hover:bg-clr-green md:hidden"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-20 w-20"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div
+            id="navmenu"
+            class="hidden w-full items-center md:flex md:w-auto md:flex-row md:items-center md:justify-center md:gap-12"
+          >
+            <ul
+              class="mt-4 flex flex-col items-center gap-4 p-3 text-xl font-medium text-base-white md:mt-0 md:flex-row md:gap-0 md:space-x-8 md:border-0 md:p-0"
+            >
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Tous les produits</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Consoles</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Jeux</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Figurines</a
+                >
+              </li>
+            </ul>
+            <section
+              class="flex flex-row items-center gap-12 pt-4 md:justify-end"
+            >
+              <img
+                class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                src="../assets/user.svg"
+                alt="profil"
+              />
+              <img
+                class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                src="../assets/panier.svg"
+                alt="panier"
+              />
+            </section>
+          </div>
+        </div>
+      </nav>
+    </header>
 
-   <h1 class=" flex justify-center font-inter font-bold text-xl xl:text-5xl mt-4 mb-14"> Bienvenue sur le back office</h1>
-   <h2 class="font-inter font-bold text-lg xl:text-4xl">Liste des commandes</h2>
-   <div class="border-2 border-clr-green m-2 p-2 flex  justify-center">
-    <div class="flex flex-col  md:flex-row   gap-5 font-bold font-inter md:items-center md:justify-center">
-      <h3>numero de la commande</h3>
-      <h3>statut de la commande</h3>
-      <h3>modifier le statut</h3>
-      <div class="flex flex-col items-end">
-      <h3>18/03/2004</h3>
-      <h4 class="text-sm font-regular">details de la commande</h4>
-    </div>
-    </div>
-   
-   </div>
+  
   </body>
 </html>
+
+<script>
+  handler_opennavbar = function () {
+    let nav = document.querySelector("#navmenu");
+    if (nav.classList.contains("hidden")) {
+      nav.classList.remove("hidden", "flex", "flex-col");
+      nav.classList.add("flex", "flex-col");
+    } else {
+      nav.classList.add("hidden");
+    }
+  };
+  let div = document.querySelector("#navbtn");
+  div.addEventListener("click", handler_opennavbar);
+</script>
