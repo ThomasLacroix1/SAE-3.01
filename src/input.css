@@ -129,4 +129,10 @@
 .form__label{
     @apply font-semibold md:text-xl;
 }
+.nav__icon{
+  @apply cursor-pointer md:h-14  xl:h-24  xl:w-24;
+}
+.nav__item{
+  @apply block py-2 pl-3 pr-4 hover:bg-clr-green md:border-0 md:p-0  md:hover:text-clr-green;
+}
 }
