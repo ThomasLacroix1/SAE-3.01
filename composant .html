@@ -190,91 +190,92 @@
 
 <!--  Navbar responsive 
     <header>
-      <nav class="bg-clr-light-green px-20 py-2.5">
-        <div
-          class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
-        >
-          <a class="flex items-center" href="#" class="flex items-center">
-            <img
-              class="h-10 md:h-12 xl:h-full"
-              src="../assets/logo.png"
-              alt="logo"
-            />
-          </a>
-          <button
-            id="navbtn"
-            class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-base-white hover:bg-clr-green md:hidden"
-          >
-            <span class="sr-only">Open main menu</span>
-            <svg
-              class="h-20 w-20"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 17 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M1 1h15M1 7h15M1 13h15"
-              />
-            </svg>
-          </button>
+        <nav class="bg-clr-light-green  py-2.5">
           <div
-            id="navmenu"
-            class="hidden w-full items-center md:flex md:w-auto md:flex-row md:items-center md:justify-center md:gap-12"
+            class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
           >
-            <ul
-              class="mt-4 flex flex-col items-center gap-4 p-3 text-xl font-medium text-base-white md:mt-0 md:flex-row md:gap-0 md:space-x-8 md:border-0 md:p-0"
-            >
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
-                  >Tous les produits</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
-                  >Consoles</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
-                  >Jeux</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
-                  >Figurines</a
-                >
-              </li>
-            </ul>
-            <section
-              class="flex flex-row items-center gap-12 pt-4 md:justify-end"
-            >
+            <a class="flex items-center" href="#" class="flex items-center">
               <img
-                class="h-20 cursor-pointer xl:h-24 xl:w-24"
-                src="../assets/user.svg"
-                alt="profil"
+                class="h-10 md:h-12 xl:h-full"
+                src="../assets/logo.png"
+                alt="logo"
               />
-              <img
-                class="h-20 cursor-pointer xl:h-24 xl:w-24"
-                src="../assets/panier.svg"
-                alt="panier"
-              />
-            </section>
+            </a>
+            <button
+              id="navbtn"
+              class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-base-white hover:bg-clr-green md:hidden"
+            >
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="h-20 w-20"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+            <div
+              id="navmenu"
+              class="hidden w-full items-center md:flex md:w-auto md:flex-row md:items-center md:justify-center md:gap-12"
+            >
+              <ul
+                class="mt-4 flex flex-col items-center gap-4 p-3 text-xl font-medium text-base-white md:mt-0 md:flex-row md:gap-0 md:space-x-8 md:border-0 md:p-0"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                    >Tous les produits</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                    >Consoles</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                    >Jeux</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                    >Figurines</a
+                  >
+                </li>
+              </ul>
+              <section
+                class="flex flex-row items-center gap-12 pt-4 md:justify-end"
+              >
+                <img
+                  class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                  src="../assets/user.svg"
+                  alt="profil"
+                />
+                <img
+                  class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                  src="../assets/panier.svg"
+                  alt="panier"
+                />
+              </section>
+            </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
+
   
 <script>
   handler_opennavbar = function () {
@@ -617,47 +618,19 @@
 
 <!-- back office composent résumé de commande 
 
-<h1
-class="mb-24 mt-24 flex justify-center font-inter text-xl font-bold md:text-3xl xl:text-5xl"
->
-Bienvenue sur le back office
-</h1>
-<h2
-class="mb-10 ml-10 font-inter text-lg font-bold md:text-2xl xl:text-4xl"
->
-Liste des commandes
-</h2>
-<div class="m-2 mx-20 flex justify-center border-2 border-clr-green p-4">
-<div
-  class="flex w-full flex-col items-center gap-5 font-inter font-bold md:flex-row md:justify-start md:justify-between"
->
-  <h3>numero de la commande</h3>
-  <h3>statut de la commande</h3>
-  <div class="flex items-center justify-center gap-4">
-    <h3>modifier le statut</h3>
-    <img class="h-7" src="../assets/arrow-down.svg" alt="" />
-  </div>
-  <div class="flex flex-col items-center md:items-end">
-    <h3>18/03/2004</h3>
-    <h4 class="text-sm font-light">details de la commande</h4>
-  </div>
-</div>
-</div>
--->
-
-<!-- back office composent résumé de commande entier 
-
-<main>
-  <article class="mb-24 flex flex-col">
-    <section>
-      <div
-        class="m-4 flex flex-col border-4 border-clr-light-green p-8 pt-0 md:px-4 xl:mx-36"
-      >
-        <section
-          class="mt-4 flex flex-col items-center gap-4 px-2 font-inter font-semibold md:flex-row md:justify-between md:py-4 xl:text-lg"
-        >
+  <h1
+          class="mb-24 mt-24 flex justify-center font-inter text-xl font-bold md:text-3xl xl:text-5xl"
+          >
+          Bienvenue sur le back office
+          </h1>
+          <h2
+          class="mb-10 ml-10 font-inter text-lg font-bold md:text-2xl xl:text-4xl"
+          >
+          Liste des commandes
+          </h2>
+          <div class="m-4  xl:mx-36 flex justify-center border-4 border-clr-light-green p-4">
           <div
-            class="flex w-full flex-col items-center gap-5 font-inter font-bold md:flex-row md:justify-between"
+            class="flex w-full flex-col items-center gap-5 font-inter font-bold md:flex-row  md:justify-between"
           >
             <h3>numero de la commande</h3>
             <h3>statut de la commande</h3>
@@ -665,54 +638,83 @@ Liste des commandes
               <h3>modifier le statut</h3>
               <img class="h-7" src="../assets/arrow-down.svg" alt="" />
             </div>
-            <h3>18/03/2004</h3>
+            <div class="flex flex-col items-center md:items-end">
+              <h3>18/03/2004</h3>
+              <h4 class="text-sm font-light">details de la commande</h4>
+            </div>
           </div>
-        </section>
-        <div class="flex flex-col gap-4 md:flex-row md:items-center">
-          <section
-            class="my-6 flex flex-col items-center justify-center border-b-2 border-t-2 border-base-black py-6 font-inter md:border-b-0 md:border-r-2 md:border-t-0 md:pr-4 xl:text-lg"
-          >
-            <h2 class="mb-6 p-4 font-bold">information personnelles</h2>
-            <div class="flex flex-col gap-2">
-              <h3>Nom</h3>
-              <h3>Prénom</h3>
-              <h3>Adresse mail</h3>
-              <h3>Téléphone</h3>
-            </div>
-          </section>
-          <section class="flex w-full flex-col">
-            <div
-              class="flex flex-col items-center border-b-2 pb-4 pt-8 md:w-full md:flex-row md:items-start md:justify-start"
-            >
-              <div class="flex flex-col items-center md:w-full md:flex-row">
-                <img
-                  class="h-fit w-24"
-                  src="../assets/mario-3d-world.png"
-                  alt=""
-                />
+          </div>
+
+-->
+
+<!-- back office composent résumé de commande entier 
+
+  <main>
+            <article class="mb-24 flex flex-col">
+              <section>
                 <div
-                  class="mt-6 flex flex-col items-center gap-5 text-center text-base font-bold md:mt-0 md:items-start md:text-lg xl:text-xl"
+                  class="m-4 flex flex-col border-4 border-clr-light-green p-8 pt-0 md:px-4 xl:mx-36"
                 >
-                  <h2>Super mario 3D World + Bowser Fury</h2>
-                  <p>
-                    Edition : <span class="font-normal">Classique</span>
-                  </p>
-                  <p>
-                    Plateforme : <span class="font-normal">Switch</span>
-                  </p>
+                  <section
+                    class="mt-4 flex flex-col items-center gap-4 px-2 font-inter font-semibold md:flex-row md:justify-between md:py-4 xl:text-lg"
+                  >
+                    <div
+                      class="flex w-full flex-col items-center gap-5 font-inter font-bold md:flex-row md:justify-between"
+                    >
+                      <h3>numero de la commande</h3>
+                      <h3>statut de la commande</h3>
+                      <div class="flex items-center justify-center gap-4">
+                        <h3>modifier le statut</h3>
+                        <img class="h-7" src="../assets/arrow-down.svg" alt="" />
+                      </div>
+                      <h3>18/03/2004</h3>
+                    </div>
+                  </section>
+                  <div class="flex flex-col gap-4 md:flex-row md:items-center">
+                    <section
+                      class="my-6 flex flex-col items-center justify-center border-b-2 border-t-2 border-base-black py-6 font-inter md:border-b-0 md:border-r-2 md:border-t-0 md:pr-4 xl:text-lg"
+                    >
+                      <h2 class="mb-6 p-4 font-bold">information personnelles</h2>
+                      <div class="flex flex-col gap-2">
+                        <h3>Nom</h3>
+                        <h3>Prénom</h3>
+                        <h3>Adresse mail</h3>
+                        <h3>Téléphone</h3>
+                      </div>
+                    </section>
+                    <section class="flex w-full flex-col">
+                      <div
+                        class="flex flex-col items-center border-b-2 pb-4 pt-8 md:w-full md:flex-row md:items-start md:justify-start"
+                      >
+                        <div class="flex flex-col items-center md:w-full md:flex-row">
+                          <img
+                            class="h-fit w-24"
+                            src="../assets/mario-3d-world.png"
+                            alt=""
+                          />
+                          <div
+                            class="mt-6 flex flex-col items-center gap-5 text-center text-base font-bold md:mt-0 md:items-start md:text-lg xl:text-xl"
+                          >
+                            <h2>Super mario 3D World + Bowser Fury</h2>
+                            <p>
+                              Edition : <span class="font-normal">Classique</span>
+                            </p>
+                            <p>
+                              Plateforme : <span class="font-normal">Switch</span>
+                            </p>
+                          </div>
+                        </div>
+                        <div class="mt-4 flex justify-end md:pr-4">
+                          <h3 class="text-center text-base font-bold md:text-xl">
+                            quantité 1
+                          </h3>
+                        </div>
+                      </div>
+                    </section>
+                  </div>
                 </div>
-              </div>
-              <div class="mt-4 flex justify-end md:pr-4">
-                <h3 class="text-center text-base font-bold md:text-xl">
-                  quantité 1
-                </h3>
-              </div>
-            </div>
-          </section>
-        </div>
-      </div>
-    </section>
-  </article>
-</main>
+              </section>
+            </article>
+          </main>
 
 -->
