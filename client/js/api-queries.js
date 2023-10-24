@@ -24,8 +24,9 @@ let getRequest = async function(uri){
     };
 
     let response = await fetch(uri, options); // exécution (asynchrone) de la requête et attente de la réponse
-    $json = await response.json(); // extraction du json retourné par le serveur (opération asynchrone aussi)
-    return JSON.parse($json); // et on retourne le tout converti en Javascript.
+    let json = await response.json(); // extraction du json retourné par le serveur (opération asynchrone aussi)
+    renderAllcard(json);
+    return json ; // et on retourne le tout converti en Javascript.
 }
 
 
@@ -53,7 +54,7 @@ let postRequest = async function(uri, data){
     }
 
     let response = await fetch(uri, options); // exécution (asynchrone) de la requête et attente de la réponse
-    $json = await response.json(); // extraction du json retourné par le serveur (opération asynchrone aussi)
+   let $json = await response.json(); // extraction du json retourné par le serveur (opération asynchrone aussi)
     return JSON.parse($json); // et on retourne le tout converti en Javascript.
 }
 
@@ -87,3 +88,31 @@ let deleteRequest = async function(uri){
 let patchRequest = async function(uri, data){
    // Pas implémenté. TODO if needed.
 }
+
+
+formatcard = function(data){
+    let template = document.querySelector("#card-template");
+    let html = template.innerHTML;
+    html = html.replace('{{titre}}', data.titre);
+    html = html.replace('{{alt}}', data.titre);
+    html = html.replace('{{prix}}', data.prix);
+    html = html.replace('{{url_img}}', data.url_image);
+    html = html.replace('{{btn}}', data.id_produit);
+
+    return html;
+}
+renderAllcard = function( data ){
+    let htmlcard="";
+    for (let all of data){
+        htmlcard += formatcard(all);
+
+    }
+    document.querySelector('#content-card').innerHTML = htmlcard;
+}
+
+
+getRequest("https://mmi.unilim.fr/~brandy18/api/products");
+
+
+
+

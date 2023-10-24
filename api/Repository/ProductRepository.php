@@ -23,7 +23,7 @@ class ProductRepository extends EntityRepository {
         parent::__construct();
     }
 
-    public function find($id): ?Product{
+    public function find($id_produit): ?Product{
         /*
             La façon de faire une requête SQL ci-dessous est "meilleur" que celle vue
             au précédent semestre (cnx->query). Notamment l'utilisation de bindParam
@@ -31,28 +31,31 @@ class ProductRepository extends EntityRepository {
             d'injection SQL.
         */
         $requete = $this->cnx->prepare("select * from Product where id=:value"); // prepare la requête SQL
-        $requete->bindParam(':value', $id); // fait le lien entre le "tag" :value et la valeur de $id
+        $requete->bindParam(':value', $id_produit); // fait le lien entre le "tag" :value et la valeur de $id
         $requete->execute(); // execute la requête
         $answer = $requete->fetch(PDO::FETCH_OBJ);
         
         if ($answer==false) return null; // may be false if the sql request failed (wrong $id value for example)
         
-        $p = new Product($answer->id);
-        $p->setName($answer->name);
-        $p->setIdcategory($answer->category);
+        $p = new Product($answer->id_produit);
+        $p->setName($answer->titre);
+        $p->setCategorie($answer->id_categorie);
         return $p;
     }
 
     public function findAll(): array {
-        $requete = $this->cnx->prepare("select * from Product");
+        $requete = $this->cnx->prepare('SELECT * FROM Produits');
         $requete->execute();
         $answer = $requete->fetchAll(PDO::FETCH_OBJ);
 
         $res = [];
         foreach($answer as $obj){
-            $p = new Product($obj->id);
-            $p->setName($obj->name);
-            $p->setIdcategory($obj->category);
+            $p = new Product($obj->id_produit);
+            $p->setName($obj->titre);
+            $p->setPrix($obj->prix);
+            $p->setUrl($obj->url_image);
+            $p->setDescription($obj->description);
+            $p->setCategorie($obj->id_categorie);
             array_push($res, $p);
         }
        

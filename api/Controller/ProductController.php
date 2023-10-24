@@ -16,15 +16,15 @@ class ProductController extends Controller {
 
    
     protected function processGetRequest(HttpRequest $request) {
-        $id = $request->getId("id");
-        if ($id){
+        $id_produit = $request->getId("id_produit");
+        if ($id_produit){
             // URI is .../products/{id}
-            $p = $this->products->find($id);
+            $p = $this->products->find($id_produit);
             return $p==null ? false :  $p;
         }
         else{
             // URI is .../products
-            $cat = $request->getParam("category"); // is there a category parameter in the request ?
+            $cat = $request->getParam("id_categorie"); // is there a category parameter in the request ?
             if ( $cat == false) // no request category, return all products
                 return $this->products->findAll();
             else // return only products of category $cat
@@ -36,8 +36,8 @@ class ProductController extends Controller {
         $json = $request->getJson();
         $obj = json_decode($json);
         $p = new Product(0); // 0 is a symbolic and temporary value since the product does not have a real id yet.
-        $p->setName($obj->name);
-        $p->setIdcategory($obj->category);
+        $p->setName($obj->titre);
+        $p->setCategorie($obj->category);
         $ok = $this->products->save($p); 
         return $ok ? $p : false;
     }

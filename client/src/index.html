@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+  <main>
+    <article class="flex flex-col gap-4">
+      <h2 class="text-xl font-bold ml-10 mt-10">Nos Produit</h2>
+      <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4 overflow-hidden">
+        <div id="test" class="w-full relative flex items-center justify-start">
+
+          <button  class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
+            <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+        </button>
+
+        <ul id="content-card" class="flex flex-row  gap-5 p-4">
+        <template id="card-template">
+          <li class="w-2/3 md:w-72 flex flex-col items-center justify-center gap-3 rounded-md p-6 shadow-card">
+            <img
+              src="{{url_img}}"
+              alt="{{alt}}"
+            />
+            <h3 class="text-center text-base font-bold md:text-lg">
+              {{titre}}
+            </h3>
+            <div
+              class="flex w-full flex-row items-center justify-between"
+            >
+              <h4 class="font-bold">{{prix}}€</h4>
+            </div>
+            <button
+             id="{{btn}}" class="flex w-fit flex-row items-center justify-center gap-1 rounded-md bg-clr-green px-2 py-1 text-lg font-bold text-base-white border-2 border-clr-green hover:bg-base-white hover:text-clr-green"
+            >
+              Ajouter au panier
+            </button>
+        </li>
+      </template>
+        </ul>
+        <button aria-label="slide forward" class="absolute z-30 right-0 mr-4 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
+          <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+      </button>
+      
+    </div>
+  </div>
+    </article>
+</main>
+  </body>
+</html>
+<script src="../js/api-queries.js"></script>
+
+<script>
+let offset = 0;
+    // Sélectionne les éléments du DOM nécessaires
+    let prev = document.getElementById("prev");
+    let next = document.getElementById("next");
+    let items = document.getElementById("content-card");
+
+    // Ajoute un écouteur d'événement au bouton précédent
+   prev.addEventListener("click", function() {
+        // Vérifie si le décalage est supérieur à zéro
+        if (offset > 0) {
+            // Réduit le décalage de 100%
+            offset -= 40;
+            // Applique la transformation CSS au conteneur des éléments
+            items.style.transform = "translateX(-" + offset + "%)";
+        }
+    });
+
+    // Ajoute un écouteur d'événement au bouton suivant
+    next.addEventListener("click", function() {
+        // Vérifie si le décalage est inférieur à la largeur maximale du carrousel
+        if (offset < items.offsetWidth - 100) {
+            // Augmente le décalage de 100%
+            offset += 40;
+            // Applique la transformation CSS au conteneur des éléments
+            items.style.transform = "translateX(-" + offset + "%)";
+        }
+    });
+</script>

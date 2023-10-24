@@ -9,12 +9,15 @@
  *  de la classe Product doivent être converti en JSON. Voire la méthode pour plus de détails.
  */
 class Product implements JsonSerializable {
-    private int $id; // id du produit
-    private string $name; // nom du produit
-    private int $idcategory; // id de la catégorie du produit
+    private int $id_produit; // id du produit
+    private string $titre; // nom du produit
+    private int $id_categorie; // id de la catégorie du produit
+    private string $description; // id de la catégorie du produit
+    private string $prix; // id de la catégorie du produit
+    private string $url_image; // id de la catégorie du produit
 
-    public function __construct(int $id){
-        $this->id = $id;
+    public function __construct(int $id_produit){
+        $this->id_produit = $id_produit;
     }
 
     /**
@@ -22,7 +25,7 @@ class Product implements JsonSerializable {
      */ 
     public function getId(): int
     {
-        return $this->id;
+        return $this->id_produit;
     }
 
     /**
@@ -48,7 +51,7 @@ class Product implements JsonSerializable {
      *  
      */
     public function JsonSerialize(): mixed{
-        return ["id" => $this->id, "name" => $this->name, "category" => $this->idcategory];
+        return ["id_produit" => $this->id_produit, "titre" => $this->titre, "id_categorie" => $this->id_categorie , "description" => $this->description , "prix" => $this->prix, "url_image" => $this->url_image];
     }
 
     /**
@@ -56,7 +59,7 @@ class Product implements JsonSerializable {
      */ 
     public function getName()
     {
-        return $this->name;
+        return $this->titre;
     }
 
     /**
@@ -64,28 +67,28 @@ class Product implements JsonSerializable {
      *
      * @return  self
      */ 
-    public function setName($name): self
+    public function setName($titre): self
     {
-        $this->name = $name;
+        $this->titre = $titre;
         return $this;
     }
 
     /**
-     * Get the value of idcategory
+     * Get the value of id_category
      */ 
-    public function getIdcategory()
+    public function getCategorie()
     {
-        return $this->idcategory;
+        return $this->id_categorie;
     }
 
     /**
-     * Set the value of idcategory
+     * Set the value of id_category
      *
      * @return  self
      */ 
-    public function setIdcategory(int $idcategory): self
+    public function setCategorie(int $id_categorie): self
     {
-        $this->idcategory = $idcategory;
+        $this->id_categorie = $id_categorie;
         return $this;
     }
 
@@ -97,6 +100,66 @@ class Product implements JsonSerializable {
     public function setId($id): self
     {
         $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * Get the value of description
+     */ 
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set the value of description
+     *
+     * @return  self
+     */ 
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of prix
+     */ 
+    public function getPrix()
+    {
+        return $this->prix;
+    }
+
+    /**
+     * Set the value of prix
+     *
+     * @return  self
+     */ 
+    public function setPrix($prix)
+    {
+        $this->prix = $prix;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of url_image
+     */ 
+    public function getUrl()
+    {
+        return $this->url_image;
+    }
+
+    /**
+     * Set the value of url_image
+     *
+     * @return  self
+     */ 
+    public function setUrl($url_image)
+    {
+        $this->url_image = $url_image;
+
         return $this;
     }
 }

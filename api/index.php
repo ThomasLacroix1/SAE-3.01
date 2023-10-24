@@ -30,14 +30,15 @@ $router = [
 
 // objet HttpRequest qui contient toutes les infos utiles sur la requêtes (voir class/HttpRequest.php)
 $request = new HttpRequest();
-
+//var_dump($request);
 // on récupère la ressource ciblée par la requête
 $route = $request->getRessources();
 
 if ( isset($router[$route]) ){ // si on a un controleur pour cette ressource
     $ctrl = $router[$route];  // on le récupère
     $json = $ctrl->jsonResponse($request); // et on invoque jsonResponse pour obtenir la réponse (json) à la requête (voir class/Controller.php et ProductController.php)
-    if ($json){ 
+    if ($json)
+    { 
         header("Content-type: application/json;charset=utf-8");
         echo $json;
     }
