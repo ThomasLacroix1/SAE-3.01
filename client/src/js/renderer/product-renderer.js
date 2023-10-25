@@ -16,13 +16,14 @@ let render = function(data){
         // on vérifie que p est bien un Product
         if (p instanceof Product){
             html = productTemplate.replace("{{idproduit}}", p.getIdproduit() );
-            html = productTemplate.replace("{{id_categorie}}", p.getIdcategorie() );
-            html = productTemplate.replace("{{id}}", p.getPrix() );
-            html = productTemplate.replace("{{titre}}", p.getTitre() );
-            html = productTemplate.replace("{{alt}}", p.getTitre() );
-            html = productTemplate.replace("{{description}}", p.getDescription() );
-            html = productTemplate.replace("{{categorie_nom}}", p.getCategorie_nom() );
-            html = productTemplate.replace("{{url_img}}", p.getUrlimage() );
+            html = html.replace("{{id_categorie}}", p.getIdcategorie() );
+            html = html.replace("{{prix}}", p.getPrix() );
+            html = html.replace("{{titre}}", p.getTitre() );
+            html = html.replace("{{alt}}", p.getTitre() );
+            html = html.replace("{{description}}", p.getDescription() );
+            html = html.replace("{{categorie_nom}}", p.getCategorie_nom() );
+            html = html.replace("{{url_img}}", p.getUrlimage() );
+            console.log(html);
             all += html;
         }
     }

@@ -1,7 +1,3 @@
-
-
-
-
 /**
  *  Les classes existent aussi en Javascript comme dans tous les langages orientés objets.
  * 

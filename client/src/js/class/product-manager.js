@@ -1,4 +1,3 @@
-
 import { Product } from "./product.js";
 import { getRequest, postRequest } from "../api-queries.js";
 
@@ -16,7 +15,7 @@ class ProductCollection {
         this.#uri = uri;
         let objects = await getRequest(uri);
         for(let item of objects){
-            let p = new Product(item.id_prod, item.titre, item.id_cat , item.desc , item.prix , item.url_img , item.cat_nom);
+            let p = new Product(item.id_produit, item.titre, item.id_categorie, item.description, item.prix, item.url_image, item.categorie_nom);
             this.#add(p);
         }
         return this.#products.length;
