@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="../dist/output.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+
+    <header>
+      <nav class="bg-clr-light-green py-2.5 mb-10">
+        <div
+          class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 w-full"
+        >
+          <a class="flex items-center" href="#" class="flex items-center">
+            <img
+              class="h-10 md:h-12 xl:h-full"
+              src="../assets/logo.png"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="navbtn"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-base-white hover:bg-clr-green md:hidden"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-20 w-20"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div
+            id="navmenu"
+            class="hidden w-full items-center md:flex md:w-auto md:flex-row md:items-center md:justify-center md:gap-12"
+          >
+            <ul
+             id="nav-content" class="mt-4 flex flex-col items-center gap-4 p-3 text-xl font-medium text-base-white md:mt-0 md:flex-row md:gap-0 md:space-x-8 md:border-0 md:p-0"
+            >
+              <li>
+                <a
+                id="0"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Tous les produits</a
+                >
+              </li>
+              <li>
+                <a 
+                  id="2"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Consoles</a
+                >
+              </li>
+              <li>
+                <a
+                  id="1"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Jeux</a
+                >
+              </li>
+              <li>
+                <a
+                id="3"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Figurines</a
+                >
+              </li>
+            </ul>
+            <section
+              class="flex flex-row items-center gap-12  md:justify-end"
+            >
+              <img
+                class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                src="../assets/user.svg"
+                alt="profil"
+              />
+              <img
+                class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                src="../assets/panier.svg"
+                alt="panier"
+              />
+            </section>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="content"></main>
+      <!-- template page d'accueil -->
+      <template id="accueil-template">
+        <select 
+            class="w-fit appearance-none rounded-md bg-clr-green px-2 py-2 text-lg font-bold text-base-white ml-10 mb-5"
+            id="filter-cat"
+            name="options"
+          >
+          <option value="0">choisir votre catégorie</option>
+            <option value="1">Jeux video</option>
+            <option value="2">Consoles</option>
+            <option value="3">Figurines</option>
+          </select>
+        <article class="flex flex-col gap-4">
+          <h2 class="text-xl font-bold ml-10 mt-10">Nos Produits</h2>
+              <ul id="content-card" class="flex flex-row flex-wrap gap-5 p-4"></ul>
+        </article>
+      </template>
+
+      <!-- template carte -->
+      <template id="card-template">
+        <li id="{{idproduit}}" class="produit w-2/3 md:w-72 flex flex-col items-center justify-center gap-3 rounded-md p-6 shadow-card">
+          <img class="pointer-events-none"
+            src="{{url_img}}"
+            alt="{{alt}}"
+          />
+          <h3 class="text-center text-base font-bold md:text-lg pointer-events-none">
+            {{titre}}
+          </h3>
+          <div
+            class="flex w-full flex-row items-center justify-between pointer-events-none"
+          >
+            <h4 class="font-bold pointer-events-none">{{prix}}€</h4>
+          </div>
+          <button
+          class="flex w-fit flex-row items-center justify-center gap-1 rounded-md bg-clr-green px-2 py-1 text-lg font-bold text-base-white border-2 border-clr-green hover:bg-base-white hover:text-clr-green"
+          >
+            Ajouter au panier
+          </button>
+        </li>
+      </template>
+
+      <!-- template page produit -->
+      <template id="product_template">
+        <div class="flex gap-2 py-10 font-inter text-lg ml-20 ">
+          <img class="" src="../assets/arrow-left.svg" alt="arrow-right">
+          <p>retour vers l'accueil</p>
+        </div>
+        <article class="flex flex-col px-4 gap-8 md:flex-row md:flex-wrap md:justify-evenly md:items-center pb-60">
+          <div class="flex flex-col px-4 md:flex-row md:gap-10">
+            <section class="flex flex-col items-center font-inter md:justify-center">
+              <img class="md:w-full" src="{{url_img}}" alt="{{alt}}">
+            </section>
+            <div class="flex flex-col gap-6 xl:justify-center">
+              <section class=" flex flex-col font-inter gap-4 pt-5 mt-16">
+                <h1 class=" text-lg font-semibold">{{titre}}</h1>
+                <p class="text-sm w-96">{{description}}</p>
+              </section>
+              <section class="flex flex-col gap-5 font-inter pb-10 px-4">
+                <div class="flex flex-col gap-3">
+                  <h3 class="text-lg">Edition</h3>
+                  <select class="p-2 rounded-lg bg-clr-green text-base-white w-fit" id="options" name="options">
+                    <option value="0">--choisir-un-profil--</option>
+                  </select>
+                </div>
+                <div class="flex flex-col gap-3">
+                  <h3 class="text-lg">Plateforme</h3>
+                  <select  class="p-2 rounded-lg bg-clr-green text-base-white w-fit " id="options2" name="options2">
+                    <option value="0">--choisir-un-profil--</option>
+                  </select>
+                </div>
+              </section>
+            </div>
+          </div>
+          <section class=" flex flex-col  text-center border-2 border-base-black font-inter gap-3 text-base xl:text-lg w-fit p-6  m-auto md:m-0 mb-5 md:items-center ">
+            <h2 class="text-xl font-bold xl:text-2xl">{{prix}}</h2>
+            <p>garantie 24 mois</p>
+            <p>quantité : <span class="font-bold"> 1</span></p>
+            <div class="flex flex-col gap-3 pt-8">
+              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Ajouter au panier</a></h2>
+              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Disponibilité en magasin</a></h2>
+            </div>
+          </section>
+        </article>
+      </template>
+      
+  </body>
+</html>
+<script type="module" src="./js/app.js"></script>
