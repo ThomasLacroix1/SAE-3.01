@@ -25,14 +25,15 @@ class Product {
     #url_image; 
     #categorie_nom; 
 
-    constructor(id_prod, titre, id_cat , desc , prix , url_img , cat_nom){
-        this.#id_produit = id_prod; 
+    constructor(id_produit, titre, id_categorie , description , prix , url_image , categorie_nom){
+        this.#id_produit = id_produit; 
         this.#titre = titre; 
-        this.#id_categorie = id_cat; 
-        this.#description = desc; 
+        this.#id_categorie = id_categorie; 
+        this.#description = description; 
         this.#prix = prix; 
-        this.#url_image = url_img; 
-        this.#categorie_nom = cat_nom; 
+        this.#url_image = url_image; 
+        this.#categorie_nom = categorie_nom; 
+        //size json parse 
     }
 
     getIdproduit(){

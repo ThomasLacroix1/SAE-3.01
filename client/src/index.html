@@ -7,18 +7,109 @@
     <title>Document</title>
   </head>
   <body>
+    <header>
+      <nav class="bg-clr-light-green  py-2.5 mb-10">
+        <div
+          class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 w-full"
+        >
+          <a class="flex items-center" href="#" class="flex items-center">
+            <img
+              class="h-10 md:h-12 xl:h-full"
+              src="../assets/logo.png"
+              alt="logo"
+            />
+          </a>
+          <button
+            id="navbtn"
+            class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-base-white hover:bg-clr-green md:hidden"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="h-20 w-20"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+          <div
+            id="navmenu"
+            class="hidden w-full items-center md:flex md:w-auto md:flex-row md:items-center md:justify-center md:gap-12"
+          >
+            <ul
+             id="nav-content" class="mt-4 flex flex-col items-center gap-4 p-3 text-xl font-medium text-base-white md:mt-0 md:flex-row md:gap-0 md:space-x-8 md:border-0 md:p-0"
+            >
+              <li>
+                <a
+                id="0"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Tous les produits</a
+                >
+              </li>
+              <li>
+                <a 
+                  id="2"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Consoles</a
+                >
+              </li>
+              <li>
+                <a
+                  id="1"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Jeux</a
+                >
+              </li>
+              <li>
+                <a
+                id="3"
+                  href="#"
+                  class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
+                  >Figurines</a
+                >
+              </li>
+            </ul>
+            <section
+              class="flex flex-row items-center gap-12  md:justify-end"
+            >
+              <img
+                class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                src="../assets/user.svg"
+                alt="profil"
+              />
+              <img
+                class="h-20 cursor-pointer xl:h-24 xl:w-24"
+                src="../assets/panier.svg"
+                alt="panier"
+              />
+            </section>
+          </div>
+        </div>
+      </nav>
+    </header>
+
     <main id="content"></main>
       <!-- template page d'accueil -->
       <template id="accueil-template">
         <select 
             class="w-fit appearance-none rounded-md bg-clr-green px-2 py-2 text-lg font-bold text-base-white ml-10 mb-5"
-            id="filtre-cat"
+            id="filter-cat"
             name="options"
           >
           <option value="0">choisir votre catégorie</option>
-          <template id="filtre-template">
-            <option value="{{id_categorie}}">{{categorie_nom}}</option>
-          </template> 
+            <option value="1">Jeux video</option>
+            <option value="2">Consoles</option>
+            <option value="3">Figurines</option>
           </select>
         <article class="flex flex-col gap-4">
           <h2 class="text-xl font-bold ml-10 mt-10">Nos Produits</h2>
