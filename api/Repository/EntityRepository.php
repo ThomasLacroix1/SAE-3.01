@@ -31,7 +31,7 @@ abstract class EntityRepository {
      *  Must return an Entity object or false if the query fails
      */
     abstract public function find($id);
-        
+
     /**
      *  findAll
      *  Query the data base for all the entities

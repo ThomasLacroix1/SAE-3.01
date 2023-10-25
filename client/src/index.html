@@ -10,29 +10,27 @@
     <main id="content"></main>
       <!-- template page d'accueil -->
       <template id="accueil-template">
+        <select 
+            class="w-fit appearance-none rounded-md bg-clr-green px-2 py-2 text-lg font-bold text-base-white ml-10 mb-5"
+            id="filtre-cat"
+            name="options"
+          >
+          <option value="0">choisir votre catégorie</option>
+          <template id="filtre-template">
+            <option value="{{id_categorie}}">{{categorie_nom}}</option>
+          </template> 
+          </select>
         <article class="flex flex-col gap-4">
           <h2 class="text-xl font-bold ml-10 mt-10">Nos Produits</h2>
-          <div class="flex items-center justify-center w-full h-full py-24 sm:py-8 px-4 overflow-hidden">
-            <div class="w-full relative flex items-center justify-start">
-              <button class="absolute z-30 left-0 ml-10 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400 cursor-pointer" id="prev">
-                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7 1L1 7L7 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-              <ul id="content-card" class="flex flex-row  gap-5 p-4"></ul>
-              <button aria-label="slide forward" class="absolute z-30 right-0 mr-4 focus:outline-none focus:bg-gray-400 focus:ring-2 focus:ring-offset-2 focus:ring-gray-400" id="next">
-                <svg class="dark:text-gray-900" width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L7 7L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </button>
-            </div>
-          </div>
+             
+              <ul id="content-card" class="flex flex-row flex-wrap gap-5 p-4"></ul>
+              
         </article>
       </template>
 
       <!-- template carte -->
       <template id="card-template">
-        <li id="{{btn}}" class="w-2/3 md:w-72 flex flex-col items-center justify-center gap-3 rounded-md p-6 shadow-card">
+        <li id="{{idproduit}}" class="w-2/3 md:w-72 flex flex-col items-center justify-center gap-3 rounded-md p-6 shadow-card">
           <img
             src="{{url_img}}"
             alt="{{alt}}"
@@ -99,4 +97,4 @@
       
   </body>
 </html>
-<script src="../js/api-queries.js"></script>
+<script type="module" src="./js/app.js"></script>

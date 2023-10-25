@@ -30,7 +30,7 @@ class ProductRepository extends EntityRepository {
             permet de vérifier que la valeur transmise est "safe" et de se prémunir
             d'injection SQL.
         */
-        $requete = $this->cnx->prepare("select * from Product where id=:value"); // prepare la requête SQL
+        $requete = $this->cnx->prepare("select * from Produits where id_produit=:value"); // prepare la requête SQL
         $requete->bindParam(':value', $id_produit); // fait le lien entre le "tag" :value et la valeur de $id
         $requete->execute(); // execute la requête
         $answer = $requete->fetch(PDO::FETCH_OBJ);
@@ -39,12 +39,18 @@ class ProductRepository extends EntityRepository {
         
         $p = new Product($answer->id_produit);
         $p->setName($answer->titre);
+        $p->setPrix($answer->prix);
+        $p->setUrl($answer->url_image);
+        $p->setDescription($answer->description);
         $p->setCategorie($answer->id_categorie);
+        $p->setCategorie_nom($answer->categorie_nom);
         return $p;
     }
 
     public function findAll(): array {
-        $requete = $this->cnx->prepare('SELECT * FROM Produits');
+        $requete = $this->cnx->prepare('SELECT Produits.*, Categories.*
+        FROM Produits
+        INNER JOIN Categories ON Produits.id_categorie = Categories.id_categorie');
         $requete->execute();
         $answer = $requete->fetchAll(PDO::FETCH_OBJ);
 
@@ -56,6 +62,7 @@ class ProductRepository extends EntityRepository {
             $p->setUrl($obj->url_image);
             $p->setDescription($obj->description);
             $p->setCategorie($obj->id_categorie);
+            $p->setCategorie_nom($obj->categorie_nom);
             array_push($res, $p);
         }
        

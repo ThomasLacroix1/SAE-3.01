@@ -15,7 +15,7 @@ class Product implements JsonSerializable {
     private string $description; // id de la catégorie du produit
     private string $prix; // id de la catégorie du produit
     private string $url_image; // id de la catégorie du produit
-
+    private string $categorie_nom; // id de la catégorie du produit
     public function __construct(int $id_produit){
         $this->id_produit = $id_produit;
     }
@@ -51,7 +51,7 @@ class Product implements JsonSerializable {
      *  
      */
     public function JsonSerialize(): mixed{
-        return ["id_produit" => $this->id_produit, "titre" => $this->titre, "id_categorie" => $this->id_categorie , "description" => $this->description , "prix" => $this->prix, "url_image" => $this->url_image];
+        return ["id_produit" => $this->id_produit, "titre" => $this->titre, "id_categorie" => $this->id_categorie , "description" => $this->description , "prix" => $this->prix, "url_image" => $this->url_image , "categorie_nom" => $this->categorie_nom];
     }
 
     /**
@@ -159,6 +159,26 @@ class Product implements JsonSerializable {
     public function setUrl($url_image)
     {
         $this->url_image = $url_image;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of categorie_nom
+     */ 
+    public function getCategorie_nom()
+    {
+        return $this->categorie_nom;
+    }
+
+    /**
+     * Set the value of categorie_nom
+     *
+     * @return  self
+     */ 
+    public function setCategorie_nom($categorie_nom)
+    {
+        $this->categorie_nom = $categorie_nom;
 
         return $this;
     }
