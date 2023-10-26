@@ -17,6 +17,7 @@ let render = function(data){
         // on vérifie que p est bien un Product
         if (p instanceof Product){
             html = cardTemplate.replace("{{idproduit}}", p.getIdproduit() );
+            html = html.replace("{{idproduit2}}", p.getIdproduit() );
             html = html.replace("{{id_categorie}}", p.getIdcategorie() );
             html = html.replace("{{prix}}", p.getPrix() );
             html = html.replace("{{titre}}", p.getTitre() );
@@ -91,92 +92,5 @@ let renderproducttemplate = function(idprod) {
     return renderProduct(idprod);
 };
 
-let renderSelectEdition = function(product) {
-    let template = document.querySelector('#select-product-template');
-    
-    if (product instanceof Product) {
-        let optionsHtml = '';
 
-        for (let edition of product.getOptionEdition()) {
-            let optionHtml = template.innerHTML.replace("{{edition}}", edition);
-            optionsHtml += optionHtml;
-        }
-        
-
-        return optionsHtml
-    }
-};
-let renderSelectTaille = function(product) {
-    let template = document.querySelector('#select-product-template3');
-    
-    if (product instanceof Product) {
-        let optionsHtml = '';
-
-        for (let taille of product.getOptionTaille()) {
-            let optiontaille= template.innerHTML.replace("{{taille}}", taille);
-            optionsHtml += optiontaille;
-        }
-        
-
-        return optionsHtml
-    }
-};
-let renderSelectPlateforme = function(product) {
-    let template = document.querySelector('#select-product-template2');
-    
-    if (product instanceof Product) {
-        let optionsHtml = '';
-
-        for (let plateforme of product.getOptionPlateforme()) {
-            let optionHtml = template.innerHTML.replace("{{plateforme}}", plateforme);
-            optionsHtml += optionHtml;
-        }
-        
-
-        return optionsHtml
-    }
-};
-    let renderSelectCollector = function(product) {
-        let template = document.querySelector('#select-product-template2');
-        
-        if (product instanceof Product) {
-            let optionsHtml = '';
-    
-            for (let collector of product.getOptionCollector()) {
-                let optionHtml = template.innerHTML.replace("{{collector}}", collector);
-                optionsHtml += optionHtml;
-            }
-            
-    
-            return optionsHtml
-        }
-    };
-    let renderSelect = function(data) {
-            if(document.querySelector("#select-1")){
-            document.querySelector('#select-1').innerHTML = renderSelectEdition(data);
-            }
-            if(document.querySelector("#select-2")){
-            document.querySelector('#select-2').innerHTML = renderSelectPlateforme(data);
-            }
-            if(document.querySelector("#select-4")){
-                document.querySelector('#select-4').innerHTML = renderSelectCollector(data);
-                }
-            if(document.querySelector("#select-3")){
-                document.querySelector('#select-3').innerHTML = renderSelectTaille(data);
-                }
-    }
-
-                      
-   
-        // Vérifiez si le tableau plateform est rempli
-   /* let selecttaille = function(data){
-        document.querySelector('#select-1').innerHTML = renderSelectTaille(data);
-        document.querySelector('#select-1').innerHTML = renderSelectTaille(data);
-    }
-    if (data.getOptionPlateforme() && data.getOptionPlateforme().length > 0) {
-          
-    } else  (data.getOptionCollector() && data.getOptionCollector().length > 0) {
-        document.querySelector('#select-2').innerHTML = renderSelectCollector(data);
-    };*/
-
-export {render as cardsRenderer, renderproducttemplate as productRenderer , renderSelect};
+export {render as cardsRenderer, renderproducttemplate as productRenderer };

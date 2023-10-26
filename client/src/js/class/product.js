@@ -13,83 +13,83 @@
  */
 
 class Product {
-    #id_produit; 
-    #titre; 
-    #id_categorie; 
-    #description; 
-    #prix; 
-    #url_image; 
-    #categorie_nom; 
-    #option_plateforme;
-    #option_edition;
-    #option_taille;
-    #option_collector;
-    #stock;
+    _id_produit; 
+    _titre; 
+    _id_categorie; 
+    _description; 
+    _prix; 
+    _url_image; 
+    _categorie_nom; 
+    _option_plateforme;
+    _option_edition;
+    _option_taille;
+    _option_collector;
+    _stock;
     constructor(id_prod, titre, id_cat , desc , prix , url_img , cat_nom , opt_plat , opt_edi , opt_taille , opt_col , stock){
-        this.#id_produit = id_prod; 
-        this.#titre = titre; 
-        this.#id_categorie = id_cat; 
-        this.#description = desc; 
-        this.#prix = prix; 
-        this.#url_image = url_img; 
-        this.#categorie_nom = cat_nom; 
-        this.#option_plateforme = JSON.stringify(opt_plat);
-        this.#option_edition = JSON.stringify(opt_edi);
-        this.#option_taille = JSON.stringify(opt_taille);
-        this.#option_collector = JSON.stringify(opt_col);
-        this.#stock = stock; 
+        this._id_produit = id_prod; 
+        this._titre = titre; 
+        this._id_categorie = id_cat; 
+        this._description = desc; 
+        this._prix = prix; 
+        this._url_image = url_img; 
+        this._categorie_nom = cat_nom; 
+        this._option_plateforme = JSON.stringify(opt_plat);
+        this._option_edition = JSON.stringify(opt_edi);
+        this._option_taille = JSON.stringify(opt_taille);
+        this._option_collector = JSON.stringify(opt_col);
+        this._stock = stock; 
       
     }
 
     getIdproduit(){
-        return this.#id_produit;     
+        return this._id_produit;     
     }
 
     getTitre(){
-        return this.#titre;    
+        return this._titre;    
     }
 
     getIdcategorie(){
-        return this.#id_categorie;     
+        return this._id_categorie;     
     }
     getDescription(){
-        return this.#description;     
+        return this._description;     
     }
 
     getPrix(){
-        return this.#prix;     
+        return this._prix;     
     }
 
     getUrlimage(){
-        return this.#url_image;     
+        return this._url_image;     
     }
 
     getCategorie_nom(){
-        return this.#categorie_nom;    
+        return this._categorie_nom;    
     }
    
     getOptionPlateforme(){
-        let a =  JSON.parse(this.#option_plateforme);
+        let a =  JSON.parse(this._option_plateforme);
        return JSON.parse(a);      
     }
 
     getOptionEdition(){
-        let b =  JSON.parse(this.#option_edition);
+        let b =  JSON.parse(this._option_edition);
        return JSON.parse(b);   
     }
 
     getOptionTaille(){
-        let c =  JSON.parse(this.#option_taille);
+        let c =  JSON.parse(this._option_taille);
        return JSON.parse(c);    
     }
 
     getOptionCollector(){
-        let d =  JSON.parse(this.#option_collector);
+        let d =  JSON.parse(this._option_collector);
        return JSON.parse(d);    
     }
 
     getStock(){
-        return this.#stock;     
+        return this._stock;     
     }
 
 

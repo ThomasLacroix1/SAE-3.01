@@ -1,25 +1,47 @@
 import { getRequest } from "./api-queries.js";
 import { ProductCollection } from "./class/product-manager.js";
-import { cardsRenderer, productRenderer, renderSelect } from "./renderer/product-renderer.js";
-       
-
+import { cardsRenderer, productRenderer } from "./renderer/product-renderer.js";
+import {  renderoptions } from "./renderer/product-select-renderer.js";
+import { Cart } from "./class/Cart-manager.js";
+import {  Itemcart } from "./class/CartItem.js";    
+import { cartRenderer } from "./renderer/cart-renderer.js";
  let M = {
-     products: new ProductCollection()
+     products: new ProductCollection(),
+     cart: new Cart()
  }
 
  let V = {}
 
  V.renderCards = function(data){
     // le produits sont affichés dans section
+    if (document.querySelector("#accueil") == null){
+        document.querySelector("#content").innerHTML = document.querySelector("#accueil-template").innerHTML;
+    }
     document.querySelector("#content-card").innerHTML = cardsRenderer(data);
+   
  }
 
  V.renderProduct = function(data){
     // le produits sont affichés dans section
     document.querySelector("#content").innerHTML = productRenderer(data);
     
-   renderSelect(data);
+    renderoptions(data);
+    let product_panier= document.querySelector(".button");
+    product_panier.addEventListener("click", C.handler_clickaddpanier);
 };
+
+V.renderCart = function(){
+    // le produits sont affichés dans section
+    document.querySelector("#content").innerHTML = document.querySelector("#panier-template").innerHTML;
+    
+    
+};
+V.renderCartprod = function(data){
+    document.querySelector("#article-content").innerHTML = cartRenderer(data);
+}
+
+
+
 
 
 
@@ -35,6 +57,11 @@ import { cardsRenderer, productRenderer, renderSelect } from "./renderer/product
      let card = document.querySelector("#content-card");
      card.addEventListener("click", C.handler_clickOnCard);
 
+     let card_panier= document.querySelector("#content-card");
+     card_panier.addEventListener("click", C.handler_clickaddpanier);
+
+     let panier= document.querySelector("#nav");
+     panier.addEventListener("click", C.handler_clickopenpanier);
  }
 
  let C = {}
@@ -71,7 +98,49 @@ C.handler_clickOncatonNav = function(ev){
             V.renderCards(M.products.findByCategory(cat));
         }
     }
+    V.init();
+}
+C.handler_clickaddpanier = function(ev){
+    if(ev.target.tagName === "BUTTON"){
+        let sel = [];
+        let cat = document.querySelector('.categorie');
+        let catid = cat.id;
+        if(catid === "1"){
+            let editionSelect = document.getElementById('select-1');
+            let plateformeSelect = document.getElementById('select-2');
+            let selectedEdition = editionSelect.options[editionSelect.selectedIndex].textContent;
+            let selectedPlateforme = plateformeSelect.options[plateformeSelect.selectedIndex].textContent;
+           sel.push(selectedEdition);
+           sel.push(selectedPlateforme);
+           console.log(sel);
+        }
+     else if(catid === "2"){
+        let editionSelect = document.getElementById('select-1');
+        let plateformeSelect = document.getElementById('select-4');
+        let selectedEdition = editionSelect.options[editionSelect.selectedIndex].textContent;
+        let selectedPlateforme = plateformeSelect.options[plateformeSelect.selectedIndex].textContent;
+       sel.push(selectedEdition);
+       sel.push(selectedPlateforme);
+       console.log(sel);
+    }
+    else if(catid === "3"){
+        let plateformeSelect = document.getElementById('select-3');
+        let selectedPlateforme = plateformeSelect.options[plateformeSelect.selectedIndex].textContent;;
+       sel.push(selectedPlateforme);
+       console.log(sel);
+    }
+        let idp = ev.target.id
+        let prod = M.products.find(idp);
+        M.cart.add(new Itemcart(prod , sel));
+        console.log(M.cart);
+    }
 }
 
+C.handler_clickopenpanier = function(ev){
+    if (ev.target.id == "panier"){
+    V.renderCart();
+    V.renderCartprod(M.cart);
+    }
+}
 
 C.init();
