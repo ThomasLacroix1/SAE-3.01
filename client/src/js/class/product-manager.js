@@ -15,7 +15,7 @@ class ProductCollection {
         this.#uri = uri;
         let objects = await getRequest(uri);
         for(let item of objects){
-            let p = new Product(item.id_produit, item.titre, item.id_categorie, item.description, item.prix, item.url_image, item.categorie_nom , item.option_plateforme , item.option_edition , item.option_taille , item.option_collector);
+            let p = new Product(item.id_produit, item.titre, item.id_categorie, item.description, item.prix, item.url_image, item.categorie_nom , item.option_plateforme , item.option_edition , item.option_taille , item.option_collector , item.stock);
             this.#add(p);
         }
         return this.#products.length;
@@ -57,12 +57,3 @@ class ProductCollection {
 
 export {ProductCollection}
 
-/*
-["Classique","Deluxe"]
-["Classique","Deluxe"]
-["Classique","Deluxe"]
-["Classique","Oled","Lite"]
-["Classique,"Slim"]
-["SeriesX","SeriesS"] 
-
-*/

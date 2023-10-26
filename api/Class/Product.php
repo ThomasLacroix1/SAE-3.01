@@ -20,6 +20,7 @@ class Product implements JsonSerializable {
     private string $option_plateforme; // id de la catégorie du produit
     private string $option_taille; // id de la catégorie du produit
     private string $option_collector; // id de la catégorie du produit
+    private int $stock; // id de la catégorie du produit
     public function __construct(int $id_produit){
         $this->id_produit = $id_produit;
     }
@@ -55,7 +56,7 @@ class Product implements JsonSerializable {
      *  
      */
     public function JsonSerialize(): mixed{
-        return ["id_produit" => $this->id_produit, "titre" => $this->titre, "id_categorie" => $this->id_categorie , "description" => $this->description , "prix" => $this->prix, "url_image" => $this->url_image , "categorie_nom" => $this->categorie_nom , "option_edition" => $this->option_edition , "option_plateforme" => $this->option_plateforme ,  "option_taille" => $this->option_taille , "option_collector" => $this->option_collector];
+        return ["id_produit" => $this->id_produit, "titre" => $this->titre, "id_categorie" => $this->id_categorie , "description" => $this->description , "prix" => $this->prix, "url_image" => $this->url_image , "categorie_nom" => $this->categorie_nom , "option_edition" => $this->option_edition , "option_plateforme" => $this->option_plateforme ,  "option_taille" => $this->option_taille , "option_collector" => $this->option_collector ,  "stock" => $this->stock];
     }
 
     /**
@@ -263,6 +264,26 @@ class Product implements JsonSerializable {
     public function setOption_collector($option_collector)
     {
         $this->option_collector = $option_collector;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of stock
+     */ 
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    /**
+     * Set the value of stock
+     *
+     * @return  self
+     */ 
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
 
         return $this;
     }

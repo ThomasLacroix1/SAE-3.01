@@ -1,6 +1,6 @@
 import { getRequest } from "./api-queries.js";
 import { ProductCollection } from "./class/product-manager.js";
-import { cardsRenderer, productRenderer, renderSelectCollector, renderSelectEdition, renderSelectPlateforme, renderSelectTaille } from "./renderer/product-renderer.js";
+import { cardsRenderer, productRenderer, renderSelect } from "./renderer/product-renderer.js";
        
 
  let M = {
@@ -18,18 +18,7 @@ import { cardsRenderer, productRenderer, renderSelectCollector, renderSelectEdit
     // le produits sont affichés dans section
     document.querySelector("#content").innerHTML = productRenderer(data);
     
-    if (data.getOptionEdition() && data.getOptionEdition().length > 0) {
-        document.querySelector('#select-1').innerHTML = renderSelectEdition(data);
-    } else if (data.getOptionTaille() && data.getOptionTaille().length > 0) {
-        document.querySelector('#select-1').innerHTML = renderSelectTaille(data);
-    }
-
-    // Vérifiez si le tableau plateform est rempli
-    if (data.getOptionPlateforme() && data.getOptionPlateforme().length > 0) {
-        document.querySelector('#select-2').innerHTML = renderSelectPlateforme(data);
-    } else if (data.getOptionCollector() && data.getOptionCollector().length > 0) {
-        document.querySelector('#select-2').innerHTML = renderSelectCollector(data);
-    }
+   renderSelect(data);
 };
 
 

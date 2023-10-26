@@ -48,6 +48,7 @@ class ProductRepository extends EntityRepository {
         $p->setOption_plateforme($answer->option_plateforme);
         $p->setOption_taille($answer->option_taille);
         $p->setOption_collector($answer->option_collector);
+        $p->setStock($answer->stock);
         return $p;
     }
 
@@ -71,6 +72,7 @@ class ProductRepository extends EntityRepository {
             $p->setOption_plateforme($obj->option_plateforme);
             $p->setOption_taille($obj->option_taille);
             $p->setOption_collector($obj->option_collector);
+            $p->setStock($obj->stock);
             array_push($res, $p);
         }
        

@@ -24,7 +24,8 @@ class Product {
     #option_edition;
     #option_taille;
     #option_collector;
-    constructor(id_prod, titre, id_cat , desc , prix , url_img , cat_nom , opt_plat , opt_edi , opt_taille , opt_col){
+    #stock;
+    constructor(id_prod, titre, id_cat , desc , prix , url_img , cat_nom , opt_plat , opt_edi , opt_taille , opt_col , stock){
         this.#id_produit = id_prod; 
         this.#titre = titre; 
         this.#id_categorie = id_cat; 
@@ -36,6 +37,7 @@ class Product {
         this.#option_edition = JSON.stringify(opt_edi);
         this.#option_taille = JSON.stringify(opt_taille);
         this.#option_collector = JSON.stringify(opt_col);
+        this.#stock = stock; 
       
     }
 
@@ -67,20 +69,29 @@ class Product {
     }
    
     getOptionPlateforme(){
-        return JSON.parse(this.#option_plateforme);    
+        let a =  JSON.parse(this.#option_plateforme);
+       return JSON.parse(a);      
     }
 
     getOptionEdition(){
-        return JSON.parse(this.#option_edition);    
+        let b =  JSON.parse(this.#option_edition);
+       return JSON.parse(b);   
     }
 
     getOptionTaille(){
-        return JSON.parse(this.#option_taille);    
+        let c =  JSON.parse(this.#option_taille);
+       return JSON.parse(c);    
     }
 
     getOptionCollector(){
-        return JSON.parse(this.#option_collector);    
+        let d =  JSON.parse(this.#option_collector);
+       return JSON.parse(d);    
     }
+
+    getStock(){
+        return this.#stock;     
+    }
+
 
 }
 

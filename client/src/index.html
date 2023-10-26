@@ -50,7 +50,7 @@
               <li>
                 <a
                 id="0"
-                  href="#"
+                  href=""
                   class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0"
                   >Tous les produits</a
                 >
@@ -182,10 +182,8 @@
             <h2 class="text-xl font-bold xl:text-2xl">{{prix}}€</h2>
             <p>garantie 24 mois</p>
             <p>quantité : <span class="font-bold"> 1</span></p>
-            <div class="flex flex-col gap-3 pt-8">
-              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Ajouter au panier</a></h2>
-              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Disponibilité en magasin</a></h2>
-            </div>
+            <h2 class="button bg-clr-green rounded-lg {{padding}} text-base-white font-semibold"><a href="">{{button}}</a></h2>
+            <p>{{stock}}</p>
           </section>
         </article>
       </template>
@@ -219,7 +217,7 @@
                 </div>
                 <div class="flex flex-col gap-3">
                   <h3 class="text-lg">Collector</h3>
-                  <select id="select-2"  class="p-2 rounded-lg bg-clr-green text-base-white w-fit " id="options2" name="options2">
+                  <select id="select-4"  class="p-2 rounded-lg bg-clr-green text-base-white w-fit " id="options2" name="options2">
                     <template id="select-product-template2">
                       <option value="0">{{collector}}</option>
                     </template>
@@ -232,10 +230,8 @@
             <h2 class="text-xl font-bold xl:text-2xl">{{prix}}€</h2>
             <p>garantie 24 mois</p>
             <p>quantité : <span class="font-bold"> 1</span></p>
-            <div class="flex flex-col gap-3 pt-8">
-              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Ajouter au panier</a></h2>
-              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Disponibilité en magasin</a></h2>
-            </div>
+            <h2 class="button bg-clr-green rounded-lg {{padding}} text-base-white font-semibold"><a href="">{{button}}</a></h2>
+            <p>{{stock}}</p>
           </section>
         </article>
       </template>
@@ -261,8 +257,8 @@
               <section class="flex flex-col gap-5 font-inter pb-10 px-4">
                 <div class="flex flex-col gap-3">
                   <h3 class="text-lg">Taille</h3>
-                  <select id="select-1" class="p-2 rounded-lg bg-clr-green text-base-white w-fit" id="options" name="options">
-                    <template id="select-product-template">
+                  <select id="select-3" class="p-2 rounded-lg bg-clr-green text-base-white w-fit" id="options" name="options">
+                    <template id="select-product-template3">
                       <option value="0">{{taille}}</option>
                     </template>
                   </select>
@@ -274,10 +270,9 @@
             <h2 class="text-xl font-bold xl:text-2xl">{{prix}}€</h2>
             <p>garantie 24 mois</p>
             <p>quantité : <span class="font-bold"> 1</span></p>
-            <div class="flex flex-col gap-3 pt-8">
-              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Ajouter au panier</a></h2>
-              <h2 class="bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Disponibilité en magasin</a></h2>
-            </div>
+              <h2 class="button bg-clr-green rounded-lg {{padding}} text-base-white font-semibold"><a href="">{{button}}</a></h2>
+              <p>{{stock}}</p>
+         
           </section>
         </article>
       </template>

@@ -46,6 +46,8 @@ let renderProduct = function(prod) {
                 break;
             case 3:
                 productTemplate = document.querySelector("#product_template-figurine").innerHTML;
+       
+            
                 break;
             default:
                 // Utilisez un modèle par défaut si l'ID de catégorie n'est pas reconnu
@@ -62,7 +64,22 @@ let renderProduct = function(prod) {
         productTemplate = productTemplate.replace("{{description}}", prod.getDescription());
         productTemplate = productTemplate.replace("{{categorie_nom}}", prod.getCategorie_nom());
         productTemplate = productTemplate.replace("{{url_img}}", prod.getUrlimage());
-        
+     ;
+        if(prod.getStock() >= 1 && prod.getStock() < 10){
+            productTemplate = productTemplate.replace("{{stock}}", "Bientot épuisé")
+            productTemplate = productTemplate.replace("{{button}}", "Ajouter au panier")
+            productTemplate = productTemplate.replace("{{padding}}", "p-2");
+        }
+        if(prod.getStock() === 0){
+            productTemplate = productTemplate.replace("{{stock}}", "Temporairement indisponible");
+            productTemplate = productTemplate.replace("{{button}}", "");
+            productTemplate = productTemplate.replace("{{padding}}", "");
+        }
+        if(prod.getStock() >= 10){
+            productTemplate = productTemplate.replace("{{stock}}", "En stock")
+            productTemplate = productTemplate.replace("{{button}}", "Ajouter au panier")
+            productTemplate = productTemplate.replace("{{padding}}", "p-2");
+        }
         html = productTemplate;
         
     }
@@ -90,7 +107,7 @@ let renderSelectEdition = function(product) {
     }
 };
 let renderSelectTaille = function(product) {
-    let template = document.querySelector('#select-product-template');
+    let template = document.querySelector('#select-product-template3');
     
     if (product instanceof Product) {
         let optionsHtml = '';
@@ -133,6 +150,33 @@ let renderSelectPlateforme = function(product) {
     
             return optionsHtml
         }
-};
+    };
+    let renderSelect = function(data) {
+            if(document.querySelector("#select-1")){
+            document.querySelector('#select-1').innerHTML = renderSelectEdition(data);
+            }
+            if(document.querySelector("#select-2")){
+            document.querySelector('#select-2').innerHTML = renderSelectPlateforme(data);
+            }
+            if(document.querySelector("#select-4")){
+                document.querySelector('#select-4').innerHTML = renderSelectCollector(data);
+                }
+            if(document.querySelector("#select-3")){
+                document.querySelector('#select-3').innerHTML = renderSelectTaille(data);
+                }
+    }
 
-export {render as cardsRenderer, renderproducttemplate as productRenderer , renderSelectEdition , renderSelectPlateforme , renderSelectTaille , renderSelectCollector };
+                      
+   
+        // Vérifiez si le tableau plateform est rempli
+   /* let selecttaille = function(data){
+        document.querySelector('#select-1').innerHTML = renderSelectTaille(data);
+        document.querySelector('#select-1').innerHTML = renderSelectTaille(data);
+    }
+    if (data.getOptionPlateforme() && data.getOptionPlateforme().length > 0) {
+          
+    } else  (data.getOptionCollector() && data.getOptionCollector().length > 0) {
+        document.querySelector('#select-2').innerHTML = renderSelectCollector(data);
+    };*/
+
+export {render as cardsRenderer, renderproducttemplate as productRenderer , renderSelect};
