@@ -54,6 +54,9 @@ V.renderCart = async function(data){
      let nav = document.querySelector("#nav-content");
      nav.addEventListener('click' , C.handler_clickOncatonNav);
 
+     let returnback = document.querySelector("#content");
+     returnback.addEventListener('click' , C.handler_clickOnreturn);
+
      let card = document.querySelector("#content-card");
      card.addEventListener("click", C.handler_clickOnCard);
 
@@ -114,7 +117,7 @@ C.handler_clickOncatonNav = function(ev){
     V.init();
 }
 C.handler_clickaddpanier = function(ev){
-    if(ev.target.tagName === "BUTTON"){
+    if(ev.target.dataset.add == "ajout"){
         let sel = [];
         let cat = document.querySelector('.categorie');
         let catid = cat.id;
@@ -186,4 +189,10 @@ if(ev.target.dataset.use == "add"){
    quantite.addEventListener("click", C.handler_clickmodifyquantite);
    }
    }
+C.handler_clickOnreturn = function(ev){
+    if(ev.target.id == 0){
+        V.renderCards(M.products.findAll());
+        V.init();
+    }
+  }
 C.init();
