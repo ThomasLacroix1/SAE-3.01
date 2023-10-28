@@ -4,20 +4,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Gamecash - Le plus grand choix de jeux vidéo d'occasion. Découvrez un large choix de consoles d'occasion pas cher, jeux reconditionnés et figurines">
   <link href="../dist/output.css" rel="stylesheet" />
-  <title>Document</title>
+  <title>Gamecash</title>
 </head>
 
 <body>
 
   <header>
-    <nav id="nav" class="bg-clr-light-green py-2.5 mb-10">
+    <nav id="nav" class="bg-clr-light-primary py-2.5 mb-10">
       <div class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4 w-full">
-        <a  class="flex items-center ">
-          <img id="0" class="h-10 md:h-12 xl:h-full " src="../assets/logo.png" alt="logo" />
-        </a>
+          <img id="0" class="h-10 md:h-12 xl:h-full flex items-center " src="../assets/logo.webp" alt="logo" />
         <button id="navbtn"
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-base-white hover:bg-clr-green md:hidden">
+          class="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-base-white hover:bg-clr-primary md:hidden">
           <span class="sr-only">Open main menu</span>
           <svg class="h-20 w-20" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -29,20 +28,20 @@
           <ul id="nav-content"
             class="mt-4 flex flex-col items-center gap-4 p-3 text-xl font-medium text-base-white md:mt-0 md:flex-row md:gap-0 md:space-x-8 md:border-0 md:p-0">
             <li>
-              <a id="0" class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0 cursor-pointer">Tous
+              <a id="0" class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-primary md:border-0 cursor-pointer">Tous
                 les
                 produits</a>
             </li>
             <li>
               <a id="2" href="#"
-                class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0">Consoles</a>
+                class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-primary md:border-0">Consoles</a>
             </li>
             <li>
-              <a id="1" href="#" class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0">Jeux</a>
+              <a id="1" href="#" class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-primary md:border-0">Jeux</a>
             </li>
             <li>
               <a id="3" href="#"
-                class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-green md:border-0">Figurines</a>
+                class="block py-2 pl-3 pr-4 hover:rounded-xl hover:bg-clr-primary md:border-0">Figurines</a>
             </li>
           </ul>
           <section class="flex flex-row items-center gap-12  md:justify-end">
@@ -57,7 +56,7 @@
   <main id="content"></main>
   <!-- template page d'accueil -->
   <template id="accueil-template">
-    <select class="w-fit appearance-none rounded-md bg-clr-green px-2 py-2 text-lg font-bold text-base-white ml-10 mb-5"
+    <select class="w-fit appearance-none rounded-md bg-clr-primary px-2 py-2 text-lg font-bold text-base-white ml-10 mb-5"
       id="filter-cat" name="options">
       <option value="0">choisir votre catégorie</option>
       <option value="1">Jeux video</option>
@@ -90,8 +89,8 @@
 
       </div>
 
-      <button data-categorie="{{id_categorie2}}" id="{{idproduit2}}"
-        class=" produit flex w-fit flex-row items-center justify-center gap-1 rounded-md bg-clr-green px-2 py-1 text-lg font-bold text-base-white border-2 border-clr-green hover:bg-base-white hover:text-clr-green ">
+      <button  data-categorie="{{id_categorie2}}" id="{{idproduit2}}"
+        class=" produit flex w-fit flex-row items-center justify-center gap-1 rounded-md bg-clr-primary px-2 py-1 text-lg font-bold text-base-white border-2 border-clr-primary hover:bg-base-white hover:text-clr-primary ">
 
         Consulter l'article
 
@@ -103,7 +102,7 @@
 
   <!-- template page jeux -->
   <template id="product_template-jeux">
-    <div class="flex gap-2 py-10 font-inter text-lg ml-20 "><a class="flex" href="">
+    <div class="flex gap-2 py-10 font-inter text-lg ml-20 "><a class="flex" id="0">
         <img src="../assets/arrow-left.svg" alt="arrow-right">
         <p>retour vers l'accueil</p>
       </a>
@@ -121,7 +120,7 @@
           <section class="flex flex-col gap-5 font-inter pb-10 px-4">
             <div class="flex flex-col gap-3">
               <h3 class="text-lg">Edition</h3>
-              <select id="select-1" class="p-2 rounded-lg bg-clr-green text-base-white w-fit" id="options"
+              <select id="select-1" class="p-2 rounded-lg bg-clr-primary text-base-white w-fit" id="options"
                 name="options">
                 <template id="select-product-template">
                   <option value="0">{{edition}}</option>
@@ -130,7 +129,7 @@
             </div>
             <div class="flex flex-col gap-3">
               <h3 class="text-lg">Plateforme</h3>
-              <select id="select-2" class="p-2 rounded-lg bg-clr-green text-base-white w-fit " id="options2"
+              <select id="select-2" class="p-2 rounded-lg bg-clr-primary text-base-white w-fit " id="options2"
                 name="options2">
                 <template id="select-product-template2">
                   <option value="0">{{plateforme}}</option>
@@ -145,8 +144,8 @@
         <h2 class="text-xl font-bold xl:text-2xl">{{prix}}€</h2>
         <p>garantie 24 mois</p>
         <p>quantité : <span class="font-bold"> 1</span></p>
-        <button id="{{idproduit}}"
-          class="button bg-clr-green rounded-lg {{padding}} text-base-white font-semibold">{{button}}</button>
+        <button data-add="ajout" id="{{idproduit}}"
+          class="button bg-clr-primary rounded-lg {{padding}} text-base-white font-semibold">{{button}}</button>
         <p>{{stock}}</p>
       </section>
     </article>
@@ -155,7 +154,7 @@
 
   <!-- template page console -->
   <template id="product_template-console">
-    <div class="flex gap-2 py-10 font-inter text-lg ml-20 "><a class="flex" href="">
+    <div class="flex gap-2 py-10 font-inter text-lg ml-20 "><a class="flex" id="0">
         <img src="../assets/arrow-left.svg" alt="arrow-right">
         <p>retour vers l'accueil</p>
       </a>
@@ -173,7 +172,7 @@
           <section class="flex flex-col gap-5 font-inter pb-10 px-4">
             <div class="flex flex-col gap-3">
               <h3 class="text-lg">Edition</h3>
-              <select id="select-1" class="p-2 rounded-lg bg-clr-green text-base-white w-fit" id="options"
+              <select id="select-1" class="p-2 rounded-lg bg-clr-primary text-base-white w-fit" id="options"
                 name="options">
                 <template id="select-product-template">
                   <option value="0">{{edition}}</option>
@@ -182,7 +181,7 @@
             </div>
             <div class="flex flex-col gap-3">
               <h3 class="text-lg">Collector</h3>
-              <select id="select-4" class="p-2 rounded-lg bg-clr-green text-base-white w-fit " id="options2"
+              <select id="select-4" class="p-2 rounded-lg bg-clr-primary text-base-white w-fit " id="options2"
                 name="options2">
                 <template id="select-product-template2">
                   <option value="0">{{collector}}</option>
@@ -197,8 +196,8 @@
         <h2 class="text-xl font-bold xl:text-2xl">{{prix}}€</h2>
         <p>garantie 24 mois</p>
         <p>quantité : <span class="font-bold"> 1</span></p>
-        <button id="{{idproduit}}"
-          class="button bg-clr-green rounded-lg {{padding}} text-base-white font-semibold">{{button}}</button>
+        <button data-add="ajout" id="{{idproduit}}"
+          class="button bg-clr-primary rounded-lg {{padding}} text-base-white font-semibold">{{button}}</button>
         <p>{{stock}}</p>
       </section>
     </article>
@@ -207,7 +206,7 @@
 
   <!-- template page figurine -->
   <template id="product_template-figurine">
-    <div class="flex gap-2 py-10 font-inter text-lg ml-20 "><a class="flex" href="">
+    <div class="flex gap-2 py-10 font-inter text-lg ml-20 "><a class="flex" id="0">
         <img class="" src="../assets/arrow-left.svg" alt="arrow-right">
         <p>retour vers l'accueil</p>
       </a>
@@ -225,7 +224,7 @@
           <section class="flex flex-col gap-5 font-inter pb-10 px-4">
             <div class="flex flex-col gap-3">
               <h3 class="text-lg">Taille</h3>
-              <select id="select-3" class="p-2 rounded-lg bg-clr-green text-base-white w-fit" id="options"
+              <select id="select-3" class="p-2 rounded-lg bg-clr-primary text-base-white w-fit" id="options"
                 name="options">
                 <template id="select-product-template3">
                   <option value="0">{{taille}}</option>
@@ -240,8 +239,8 @@
         <h2 class="text-xl font-bold xl:text-2xl">{{prix}}€</h2>
         <p>garantie 24 mois</p>
         <p>quantité : <span class="font-bold"> 1</span></p>
-        <button id="{{idproduit}}"
-          class="button bg-clr-green rounded-lg {{padding}} text-base-white font-semibold">{{button}}</button>
+        <button data-add="ajout" id="{{idproduit}}"
+          class="button bg-clr-primary rounded-lg {{padding}} text-base-white font-semibold">{{button}}</button>
         <p>{{stock}}</p>
 
       </section>
@@ -290,7 +289,7 @@
       </div>
       <div class=" flex justify-center md:justify-end m-4 md:px-4 xl:mx-48">
 
-        <h2 class=" w-fit px-4  bg-clr-green rounded-lg p-2 text-base-white font-semibold"><a href="">Valider le
+        <h2 class=" w-fit px-4  bg-clr-primary rounded-lg p-2 text-base-white font-semibold"><a href="">Valider le
 
             panier</a></h2>
 
@@ -421,7 +420,7 @@
 
   </template>
   <footer
-      class="flex flex-col gap-6 bg-clr-dark-grey py-8 font-inter xl:flex-row xl:items-center xl:justify-center"
+      class="flex flex-col gap-6 bg-clr-dark-secondary py-8 font-inter xl:flex-row xl:items-center xl:justify-center"
     >
       <div
         class="md:flex md:flex-row md:justify-center md:gap-20 xl:items-center"
@@ -435,56 +434,56 @@
           >
             <ul class="flex flex-col gap-1">
               <li>
-                <a href="">Retro Gaming</a>
+                <a href="#">Retro Gaming</a>
               </li>
               <li>
-                <a href="">Culture Geek</a>
+                <a href="#">Culture Geek</a>
               </li>
               <li>
-                <a href="">DVD/BLU-RAY </a>
+                <a href="#">DVD/BLU-RAY </a>
               </li>
               <li>
-                <a href="">Xbox One</a>
+                <a href="#">Xbox One</a>
               </li>
 
               <li>
-                <a href="">PS Vita</a>
+                <a href="#">PS Vita</a>
               </li>
               <li>
-                <a href="">Xbox X</a>
+                <a href="#">Xbox X</a>
               </li>
               <li>
-                <a href="">Xbox 360</a>
+                <a href="#">Xbox 360</a>
               </li>
               <li>
-                <a href="">PC</a>
+                <a href="#">PC</a>
               </li>
             </ul>
             <ul class="flex flex-col gap-1">
               <li>
-                <a href="">WII</a>
+                <a href="#">WII</a>
               </li>
               <li>
-                <a href="">WII U</a>
+                <a href="#">WII U</a>
               </li>
               <li>
-                <a href="">3DS</a>
+                <a href="#">3DS</a>
               </li>
               <li>
-                <a href="">DS</a>
+                <a href="#">DS</a>
               </li>
 
               <li>
-                <a href="">PSP</a>
+                <a href="#">PSP</a>
               </li>
               <li>
-                <a href="">PS3</a>
+                <a href="#">PS3</a>
               </li>
               <li>
-                <a href="">PS4</a>
+                <a href="#">PS4</a>
               </li>
               <li>
-                <a href="">PS5</a>
+                <a href="#">PS5</a>
               </li>
             </ul>
           </div>
@@ -528,7 +527,7 @@
                 Cliquez ici !
               </p>
             </div>
-            <a class="rounded-md bg-clr-green p-2" href=""> Contactez Nous </a>
+            <a class="rounded-md bg-clr-primary p-2" href="#"> Contactez Nous </a>
             <ul class="flex gap-4 pb-8">
               <li><img src="../assets/facebook.svg " alt="logo facebook" /></li>
               <li><img src="../assets/X.svg" alt="logo X" /></li>
