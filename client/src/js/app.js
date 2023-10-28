@@ -54,9 +54,6 @@ V.renderCart = async function(data){
      let nav = document.querySelector("#nav-content");
      nav.addEventListener('click' , C.handler_clickOncatonNav);
 
-     let returnback = document.querySelector("#content");
-     returnback.addEventListener('click' , C.handler_clickOnreturn);
-
      let card = document.querySelector("#content-card");
      card.addEventListener("click", C.handler_clickOnCard);
 
@@ -93,7 +90,8 @@ C. handler_opennavbar = function () {
     if (ev.target.classList.contains("produit")){
         V.renderProduct(M.products.find(ev.target.id));
     }
-    
+    let returnback = document.querySelector("#divretour");
+     returnback.addEventListener('click' , C.handler_clickOnreturn);
  }
 
  C.handler_clickcatonSelect = function(ev){
@@ -107,7 +105,6 @@ C. handler_opennavbar = function () {
 C.handler_clickOncatonNav = function(ev){
     if (ev.target.tagName === "A"){
         let cat = ev.target.id;
-        console.log(cat);
         if (cat === "0" || cat === 0) {
             V.renderCards(M.products.findAll());
         } else {
@@ -169,19 +166,16 @@ C.handler_clickmodifyquantite = function(ev){
     if(ev.target.dataset.use == "remove"){
    if( itemprod.getQuantite() > 0){
      itemprod.removequantite();
-     console.log(itemprod);
    }
 }
 if(ev.target.dataset.use == "add"){
     if( itemprod.getQuantite() >= prod.getStock()){
     }
     else{itemprod.addquantite();
-    console.log(itemprod);
     }   
 }
    if(itemprod.getQuantite() === 0){
-    let p = M.cart.remove(prod.getIdproduit())
-     console.log(p);
+   M.cart.remove(prod.getIdproduit())
      
  }
    V.renderCart(M.cart);
@@ -190,9 +184,10 @@ if(ev.target.dataset.use == "add"){
    }
    }
 C.handler_clickOnreturn = function(ev){
-    if(ev.target.id == 0){
+    if(ev.target.dataset.retour === "retour"){
         V.renderCards(M.products.findAll());
-        V.init();
+       
     }
+ 
   }
 C.init();
